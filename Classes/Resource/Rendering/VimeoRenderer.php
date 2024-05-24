@@ -71,7 +71,8 @@ class VimeoRenderer extends \TYPO3\CMS\Core\Resource\Rendering\VimeoRenderer
             'src' => $src,
             'type' => self::type,
             'isReference' => $file instanceof FileReference,
-            'attributes' => empty($attributes) ? '' : ' ' . $this->implodeAttributes($attributes),
+            'dimensions' => ['width' => $width, 'height' => $height],
+            'attributes' => empty($attributes) ? '' : ' ' . $this->implodeAttributes($attributes)
         ];
 
         // calculate the padding for the item
